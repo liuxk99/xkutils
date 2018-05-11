@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <files-path name="my_thumbs" path="thumbs/" />
+
+    <!-- Offer access to files under Environment.getExternalStorageDirectory()
+     through alias "my_external" -->
+    <external-path name="my_external" path="."/>
+
+    <!-- Offer access to files under Context.getCacheDir() -->
+    <cache-path name="my_cache" path="thumbs/"/>
+
+</paths>
