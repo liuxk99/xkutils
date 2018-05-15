@@ -21,11 +21,11 @@ public class StorageUtil {
         }
     }
 
-    public static boolean copyRawToFile(Context mainActivity, int abc, File mApkFile) {
-        InputStream ips = mainActivity.getResources().openRawResource(abc);
+    public static boolean copyRawToFile(Context context, int resId, File fileName) {
+        InputStream ips = context.getResources().openRawResource(resId);
         FileOutputStream ops;
         try {
-            ops = new FileOutputStream(mApkFile);
+            ops = new FileOutputStream(fileName);
             copy(ips, ops);
             try {
                 ips.close();

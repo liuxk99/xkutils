@@ -44,4 +44,15 @@ public class InstallerN implements Installer {
 
     }
 
+    @Override
+    public void modifyShareIntent(Intent intent, Context context, File fileName) {
+        final String authority = context.getPackageName() + ".fileprovider";
+        Uri apkUri;
+        intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        apkUri = FileProvider.getUriForFile(context, authority, fileName);
+        Log.d(TAG, "uri: " + apkUri);
+
+        intent.setDataAndType(apkUri, "application/vnd.android.package-archive");
+    }
+
 }
